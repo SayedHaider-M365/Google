@@ -1,0 +1,5 @@
+$Users = Get-GSUserList
+foreach ($User in $Users) 
+{
+Get-GSGmailSendAsSettings -User $User.User | Select User, SendAsEmail | Export-Csv "C:\Users\SendAsEmail.csv" -NoTypeInformation -Append
+}
