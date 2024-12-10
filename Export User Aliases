@@ -1,0 +1,5 @@
+$Users = Get-GSUserList
+foreach ($User in $Users) 
+{
+Get-GSUserAlias -User $User.User | Select User, PrimaryEmail, AliasValue | Export-Csv "C:\Users\UserAlias.csv" -NoTypeInformation -Append
+}
