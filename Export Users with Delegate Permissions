@@ -1,0 +1,5 @@
+$Users = Get-GSUserList
+foreach ($User in $Users) 
+{
+Get-GSGmailDelegate -User $User.User | Select Delegator, DelegateEmail | Export-Csv "C:\Users\MailboxDelegation.csv" -NoTypeInformation -Append
+}
