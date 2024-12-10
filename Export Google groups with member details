@@ -1,0 +1,5 @@
+$Groups = Get-GSGroup
+foreach ($Group in $Groups) 
+{
+    Get-GSGroupMember -Identity $Group.Name | Select Group, Email, Role, Kind | Export-Csv "C:\Users\GroupList.csv" -NoTypeInformation -Append
+}
