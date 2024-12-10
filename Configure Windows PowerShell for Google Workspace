@@ -1,0 +1,14 @@
+Install-Module Configuration
+Install-Module -Name PSGSuite -RequiredVersion 2.24.0
+
+#Import PSGSuite Module
+Import-Module PSGSuite
+$ConfigName = "GSuite"
+$P12KeyPath = "C:\Users\gsuite-********6c.p12"
+$AppEmail = "gsuite@gsuite.iam.gserviceaccount.com"
+$AdminEmail = "sayed.haider@domain.com"
+$CustomerID = "*******"
+$Domain = "domain.com"
+$ServiceAccountClientID = "111111111111111"
+
+Set-PSGSuiteConfig -ConfigName $ConfigName -P12KeyPath $P12KeyPath -AppEmail $AppEmail -AdminEmail $AdminEmail -CustomerID $CustomerID -Domain $Domain  -ServiceAccountClientID $ServiceAccountClientID
