@@ -1,0 +1,5 @@
+$Users = Get-GSUserList
+foreach ($User in $Users) 
+{
+Get-GSGmailForwardingAddress -User $User.User | Select User, ForwardingEmail | Export-Csv "C:\Users\Forwarding.csv" -NoTypeInformation -Append
+}
