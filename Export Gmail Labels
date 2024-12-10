@@ -1,0 +1,5 @@
+$Users = Get-GSUserList
+foreach ($User in $Users) 
+{
+Get-GSGmailLabel -User $User.User | Select User, Name | Export-Csv "C:\Users\GmailLabel.csv" -NoTypeInformation -Append
+}
